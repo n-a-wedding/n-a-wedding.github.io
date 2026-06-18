@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Никита & Александра — Wedding Invitation</title>
+<style>
+:root {
+  --white:#ffffff;
+  --ink:#0b0b0b;
+  --black:#000000;
+  --paper:#f7f4ee;
+  --paper2:#efe8de;
+  --terracotta:#9f4f34;
+  --terracotta2:#b86343;
+  --muted:#7a746d;
+  --line:rgba(11,11,11,.16);
+  --softline:rgba(11,11,11,.08);
+  --sage:#a7b29b;
+  --olive:#7f8765;
+  --blue:#8fa6b6;
+  --ivory:#f2ebdd;
+  --graphite:#3f4143;
+  --chocolate:#5a3828;
+  --plum:#5a3d52;
+  --dusty-denim:#55779c;
+  --smoky-mauve:#a29392;
+  --warm-taupe:#b1927d;
+  --deep-olive:#3f3d18;
+  --soft-peach:#df9b7c;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
+body {
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:geometricPrecision;
+}
+
+a {
+  color:inherit;
+  text-decoration:none;
+}
+
+.site {
+  width:100%;
+  max-width:1240px;
+  margin:0 auto;
+  background:var(--paper);
+}
+
+.nav {
+  position:sticky;
+  top:0;
+  z-index:50;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+  padding:13px clamp(18px,4vw,54px);
+  border-bottom:1px solid var(--black);
+  background:rgba(247,244,238,.92);
+  backdrop-filter:blur(12px);
+}
+
+.meta {
+  font-size:9px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  line-height:1.45;
+  color:var(--muted);
+}
+
+.nav-title {
+  color:var(--ink);
+  font-weight:700;
+}
+
+.nav-links {
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+.nav-links a {
+  font-size:9px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#38332e;
+}
+
+.section {
+  padding:clamp(34px,5.2vw,70px) clamp(20px,5.2vw,72px);
+  border-bottom:1px solid var(--softline);
+}
+
+.kicker {
+  margin:0 0 14px;
+  color:var(--terracotta);
+  font-size:10px;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  line-height:1.45;
+  font-weight:700;
+}
+
+.text {
+  margin:0;
+  font-size:clamp(15px,1.55vw,18px);
+  line-height:1.58;
+  color:#24201d;
+}
+
+.text.small {
+  font-size:14px;
+}
+
+.upper {
+  font-size:10px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  line-height:1.7;
+  color:var(--muted);
+}
+
+.serif,
+h1,h2,h3 {
+  font-family:Didot, Bodoni 72, Georgia, 'Times New Roman', serif;
+  font-weight:400;
+}
+
+.title {
+  margin:0 0 24px;
+  font-family:Didot, Bodoni 72, Georgia, 'Times New Roman', serif;
+  font-size:clamp(48px,7.6vw,108px);
+  line-height:.78;
+  letter-spacing:-.075em;
+  text-transform:uppercase;
+}
+
+.title .script {
+  color:var(--terracotta);
+  font-style:italic;
+  text-transform:none;
+}
+
+.button {
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  width:fit-content;
+  min-height:46px;
+  padding:14px 22px;
+  border:1px solid var(--black);
+  background:transparent;
+  color:var(--ink);
+  font-size:9px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  transition:.18s ease;
+}
+
+.button:hover {
+  background:var(--ink);
+  color:var(--paper);
+}
+
+.photo {
+  min-height:430px;
+  background-size:cover;
+  background-position:center;
+  filter:grayscale(1);
+}
+
+.rule {
+  border-top:1px solid var(--black);
+  padding-top:16px;
+}
+
+
+/* COVER v6.1.3 — 9-card collage */
+.cover {
+  min-height: auto;
+  padding-top: clamp(28px,4vw,54px);
+  padding-bottom: clamp(34px,5vw,70px);
+  background: var(--paper);
+}
+
+.cover-collage-613 {
+  width: min(1040px, 94vw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(8px,1.2vw,16px);
+  background: transparent;
+}
+
+.cover-collage-613 img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  display: block;
+  object-fit: cover;
+  background: var(--paper2);
+}
+
+@media (max-width: 720px) {
+  .cover-collage-613 {
+    width: min(560px, 94vw);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+}
+
+@media (max-width: 460px) {
+  .cover-collage-613 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* COVER */
+
+.cover {
+  min-height:calc(100vh - 48px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding-top:28px;
+  padding-bottom:28px;
+}
+
+.cover-card {
+  width:min(920px, 92vw);
+  margin:0 auto;
+  border:2px solid var(--black);
+  background:#0e0e0e;
+  padding:clamp(14px,2vw,24px);
+  box-shadow:0 26px 70px rgba(0,0,0,.18);
+}
+
+.cover-image {
+  width:100%;
+  display:block;
+  height:auto;
+}
+
+.cover-strip {
+  width:min(920px, 92vw);
+  margin:18px auto 0;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  gap:16px;
+  padding:11px 0;
+  border-top:1px solid var(--black);
+  border-bottom:1px solid var(--black);
+}
+
+.cover-strip span:nth-child(1) { text-align:left; }
+.cover-strip span:nth-child(2) { text-align:center; }
+.cover-strip span:nth-child(3) { text-align:right; }
+
+/* LAYOUTS */
+
+.split {
+  display:grid;
+  grid-template-columns:.92fr 1.08fr;
+  gap:clamp(28px,5.2vw,70px);
+  align-items:center;
+}
+
+.split.reverse {
+  grid-template-columns:1.08fr .92fr;
+}
+
+.date-big {
+  margin:0;
+  font-family:Didot, Bodoni 72, Georgia, 'Times New Roman', serif;
+  font-size:clamp(92px,16vw,205px);
+  line-height:.72;
+  letter-spacing:-.095em;
+  color:var(--terracotta);
+}
+
+.editorial-box {
+  background:rgba(255,255,255,.38);
+  border:1px solid var(--black);
+  padding:clamp(22px,3.5vw,42px);
+}
+
+.mood-line {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:0;
+  margin-top:28px;
+  border-top:1px solid var(--black);
+  border-bottom:1px solid var(--black);
+}
+
+.mood-line span {
+  padding:13px 10px;
+  text-align:center;
+  border-right:1px solid var(--black);
+}
+
+.mood-line span:last-child {
+  border-right:0;
+}
+
+/* TIMING */
+
+.timing-photo {
+  background-image:url('assets/image_01.jpg');
+  min-height:520px;
+}
+
+.timeline {
+  border-top:1px solid var(--black);
+}
+
+.timeline-row {
+  display:grid;
+  grid-template-columns:125px 1fr;
+  gap:24px;
+  align-items:baseline;
+  padding:22px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.time {
+  font-family:Didot, Bodoni 72, Georgia, 'Times New Roman', serif;
+  font-size:clamp(36px,4.6vw,58px);
+  line-height:.86;
+  letter-spacing:-.06em;
+  color:var(--terracotta);
+}
+
+.event {
+  font-size:clamp(17px,2vw,23px);
+  line-height:1.2;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+}
+
+/* LOCATION */
+
+.location-photo {
+  background-image:url('assets/image_02.jpg');
+  min-height:520px;
+}
+
+.location-title {
+  margin:0;
+  font-family:Didot, Bodoni 72, Georgia, 'Times New Roman', serif;
+  font-size:clamp(58px,8.4vw,120px);
+  line-height:.74;
+  letter-spacing:-.085em;
+  text-transform:uppercase;
+}
+
+.location-title em {
+  color:var(--terracotta);
+  font-style:italic;
+  text-transform:none;
+}
+
+.address {
+  margin:24px 0 28px;
+  font-size:clamp(18px,2vw,25px);
+  line-height:1.35;
+}
+
+
+/* NOTES v6.1.1 — text list + image */
+.notes-layout-611 {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: clamp(28px,5vw,64px);
+  align-items: stretch;
+}
+
+.notes-text-611 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.notes-list-611 {
+  margin-top: 24px;
+  border-top: 1px solid var(--terracotta);
+}
+
+.note-line-611 {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 22px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--terracotta);
+}
+
+.note-line-611 h3 {
+  margin: 0 0 8px;
+  font-family: Didot, Bodoni 72, Georgia, 'Times New Roman', serif;
+  font-size: clamp(36px,4vw,58px);
+  line-height: .85;
+  letter-spacing: -.06em;
+}
+
+.note-line-number-611 {
+  color: var(--terracotta);
+  font-size: 10px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding-top: 7px;
+}
+
+.notes-image-611 {
+  min-height: 100%;
+  background-image: url('assets/image_03.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(1);
+}
+
+@media (max-width:880px) {
+  .notes-layout-611 {
+    grid-template-columns: 1fr;
+  }
+
+  .notes-image-611 {
+    min-height: 420px;
+  }
+
+  .note-line-611 {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+/* NOTES */
+
+.notes-head {
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:clamp(24px,4vw,54px);
+  align-items:end;
+  margin-bottom:28px;
+}
+
+.notes-photo {
+  background-image:url('assets/image_03.jpg');
+  min-height:360px;
+}
+
+.notes-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:0;
+  border:1px solid var(--black);
+  background:rgba(255,255,255,.35);
+}
+
+.note {
+  min-height:250px;
+  padding:24px;
+  border-right:1px solid var(--black);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.note:last-child {
+  border-right:0;
+}
+
+.note-number {
+  color:var(--terracotta);
+  font-size:10px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  font-weight:700;
+}
+
+.note h3 {
+  margin:0;
+  font-family:Didot, Bodoni 72, Georgia, 'Times New Roman', serif;
+  font-size:clamp(42px,5vw,70px);
+  line-height:.78;
+  letter-spacing:-.065em;
+}
+
+/* DRESS */
+
+.dress-photo {
+  background-image:url('assets/image_04.jpg');
+  min-height:520px;
+}
+
+.palette {
+  margin-top:28px;
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  height:190px;
+  border:1px solid var(--black);
+}
+
+.swatch {
+  position:relative;
+  border-right:1px solid rgba(0,0,0,.35);
+}
+
+.swatch:last-child {
+  border-right:0;
+}
+
+.swatch span {
+  position:absolute;
+  left:9px;
+  bottom:10px;
+  writing-mode:vertical-rl;
+  transform:rotate(180deg);
+  font-size:8px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:rgba(0,0,0,.74);
+  mix-blend-mode:multiply;
+}
+
+.sage { background:var(--sage); }
+.olive { background:var(--olive); }
+.blue { background:var(--blue); }
+.ivory { background:var(--ivory); }
+.graphite { background:var(--graphite); }
+.chocolate { background:var(--chocolate); }
+.plum { background:var(--plum); }
+.dusty-denim { background:var(--dusty-denim); }
+.smoky-mauve { background:var(--smoky-mauve); }
+.warm-taupe { background:var(--warm-taupe); }
+.deep-olive { background:var(--deep-olive); }
+.soft-peach { background:var(--soft-peach); }
+
+/* FINAL */
+
+.final {
+  min-height:46vh;
+  display:grid;
+  place-items:center;
+  text-align:center;
+}
+
+.final-title {
+  margin:0;
+  font-family:Didot, Bodoni 72, Georgia, 'Times New Roman', serif;
+  font-size:clamp(76px,12vw,160px);
+  line-height:.72;
+  letter-spacing:-.09em;
+}
+
+.final-title em {
+  color:var(--terracotta);
+  font-style:italic;
+}
+
+.final-line {
+  margin-top:36px;
+  padding-top:16px;
+  border-top:1px solid var(--black);
+}
+
+@media (max-width:880px) {
+  .nav {
+    position:static;
+    align-items:flex-start;
+    flex-direction:column;
+    gap:11px;
+  }
+
+  .nav-links {
+    justify-content:flex-start;
+    gap:11px 15px;
+  }
+
+  .section {
+    padding:36px 20px;
+  }
+
+  .cover {
+    min-height:auto;
+  }
+
+  .cover-strip {
+    grid-template-columns:1fr;
+    gap:7px;
+  }
+
+  .cover-strip span:nth-child(1),
+  .cover-strip span:nth-child(2),
+  .cover-strip span:nth-child(3) {
+    text-align:left;
+  }
+
+  .split,
+  .split.reverse,
+  .notes-head {
+    grid-template-columns:1fr;
+  }
+
+  .photo,
+  .timing-photo,
+  .location-photo,
+  .dress-photo {
+    min-height:410px;
+  }
+
+  .timeline-row {
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+
+  .mood-line,
+  .notes-grid,
+  .palette {
+    grid-template-columns:1fr;
+  }
+
+  .mood-line span,
+  .note,
+  .swatch {
+    border-right:0;
+    border-bottom:1px solid var(--black);
+  }
+
+  .mood-line span:last-child,
+  .note:last-child,
+  .swatch:last-child {
+    border-bottom:0;
+  }
+
+  .note {
+    min-height:210px;
+  }
+
+  .swatch {
+    min-height:52px;
+  }
+
+  .swatch span {
+    writing-mode:initial;
+    transform:none;
+  }
+}
+
+@media (max-width:520px) {
+  .title {
+    font-size:clamp(46px,13vw,68px);
+  }
+
+  .date-big {
+    font-size:clamp(88px,27vw,140px);
+  }
+
+  .cover-card {
+    width:100%;
+  }
+
+  .cover-strip {
+    width:100%;
+  }
+}
+
+/* v6.1.5 typography balance */
+.intro-text-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.intro-main-text {
+  max-width: 620px;
+  font-size: clamp(17px,1.75vw,22px);
+  line-height: 1.5;
+}
+
+.timeline-row {
+  grid-template-columns: 122px 1fr;
+}
+
+.event {
+  font-size: clamp(18px,1.9vw,23px);
+  line-height: 1.18;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.event-main {
+  display: block;
+  font-size: clamp(19px,2vw,25px);
+  line-height: 1.15;
+  text-transform: uppercase;
+  letter-spacing: .035em;
+}
+
+.event-detail {
+  display: block;
+  margin-top: 8px;
+  max-width: 560px;
+  font-size: clamp(13px,1.25vw,16px);
+  line-height: 1.45;
+  text-transform: none;
+  letter-spacing: .02em;
+  color: var(--muted);
+}
+
+#dress .text {
+  font-size: clamp(15px,1.45vw,18px);
+  line-height: 1.55;
+}
+
+@media (max-width:880px) {
+  .timeline-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* v6.1.6 final alignment and typography edits */
+.split,
+.split.reverse,
+.notes-layout-611 {
+  align-items: start !important;
+}
+
+.kicker-black {
+  color: var(--ink) !important;
+}
+
+.title-terracotta {
+  color: var(--terracotta) !important;
+}
+
+.intro-text-clean {
+  border: 0 !important;
+  background: transparent !important;
+  padding: 0 !important;
+  display: block !important;
+}
+
+.intro-kicker {
+  color: var(--ink) !important;
+}
+
+.intro-main-text {
+  margin-top: 18px;
+}
+
+.location-title {
+  margin-bottom: 38px;
+}
+
+.address {
+  margin-top: 0 !important;
+  margin-bottom: 28px;
+  font-size: clamp(15px,1.45vw,18px) !important;
+  line-height: 1.45 !important;
+}
+
+.dress-title {
+  margin-bottom: 22px;
+}
+
+#dress .text {
+  max-width: 660px;
+}
+
+@media (max-width:880px) {
+  .location-title {
+    margin-bottom: 24px;
+  }
+}
+
+
+/* v6.1.7 final copy edits */
+.location-title-balanced {
+  margin-bottom: 42px;
+}
+
+.location-title-balanced .script {
+  color: var(--terracotta);
+  font-style: italic;
+  text-transform: none;
+}
+
+#intro .date-big {
+  margin-top: 0;
+}
+
+#dress .dress-title {
+  margin-top: 0;
+}
+
+
+/* v6.1.8 timing and location refinements */
+.location-title-balanced {
+  color: var(--ink) !important;
+}
+
+.location-title-balanced .script {
+  color: var(--terracotta) !important;
+}
+
+.time {
+  font-size: clamp(42px,5vw,70px) !important;
+  line-height: .78 !important;
+  letter-spacing: -.065em !important;
+}
+
+#timing .split.reverse {
+  align-items: stretch !important;
+}
+
+#timing .split.reverse > div:first-child {
+  align-self: start;
+}
+
+#timing .timing-photo {
+  height: 100%;
+  min-height: 0 !important;
+}
+
+#timing .timeline-row {
+  padding: 16px 0;
+}
+
+#timing .event-main {
+  font-size: clamp(17px,1.65vw,21px);
+}
+
+#timing .event-detail {
+  font-size: clamp(12px,1.12vw,15px);
+}
+
+@media (max-width:880px) {
+  #timing .split.reverse {
+    align-items: start !important;
+  }
+
+  #timing .timing-photo {
+    min-height: 380px !important;
+    height: auto;
+  }
+}
+
+
+/* v6.1.9 final timing correction */
+#timing .time {
+  font-size: clamp(36px,4.6vw,58px) !important;
+  line-height: .86 !important;
+  letter-spacing: -.06em !important;
+}
+
+#timing .timeline-row {
+  grid-template-columns: 122px 1fr;
+  gap: 24px;
+  padding: 18px 0;
+}
+
+#timing .event-main {
+  font-size: clamp(18px,1.85vw,23px) !important;
+  line-height: 1.2 !important;
+  text-transform: none !important;
+  letter-spacing: .01em !important;
+}
+
+#timing .event-detail {
+  text-transform: none !important;
+}
+
+@media (max-width:880px) {
+  #timing .timeline-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Mobile final fix: dress-code palette and final screen */
+@media (max-width: 880px) {
+  #dress {
+    padding-bottom: 56px;
+  }
+
+  #dress .palette {
+    height: auto !important;
+    min-height: 0 !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    margin-bottom: 22px;
+    overflow: visible !important;
+  }
+
+  #dress .swatch {
+    min-height: 48px !important;
+    height: 48px !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--black) !important;
+  }
+
+  #dress .swatch:last-child {
+    border-bottom: 0 !important;
+  }
+
+  #dress .swatch span {
+    display: block !important;
+    position: static !important;
+    writing-mode: initial !important;
+    transform: none !important;
+    padding: 16px 18px;
+    font-size: 10px !important;
+    line-height: 1;
+    letter-spacing: .18em !important;
+    color: rgba(0,0,0,.72);
+    mix-blend-mode: multiply;
+  }
+
+  #dress .upper {
+    position: relative;
+    z-index: 2;
+    margin-top: 18px !important;
+  }
+
+  .final {
+    min-height: auto !important;
+    padding-top: 72px !important;
+    padding-bottom: 72px !important;
+  }
+
+  .final-title {
+    font-size: clamp(58px, 20vw, 112px) !important;
+    line-height: .78 !important;
+    word-break: normal;
+  }
+
+  .final-line {
+    margin-top: 28px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  #dress .swatch {
+    min-height: 44px !important;
+    height: 44px !important;
+  }
+
+  #dress .swatch span {
+    padding: 15px 16px;
+    font-size: 9px !important;
+  }
+
+  .final {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+  }
+
+  .final-title {
+    font-size: clamp(52px, 18vw, 88px) !important;
+  }
+
+  .final-line .meta {
+    display: block;
+    line-height: 1.6;
+  }
+}
+
+</style>
+</head>
+<body>
+<main class="site">
+  <nav class="nav">
+    <span class="meta nav-title">Nikita & Alexandra</span>
+    <div class="nav-links">
+      <a href="#intro">Invitation</a>
+      <a href="#timing">Timing</a>
+      <a href="#location">Location</a>
+      <a href="#notes">Notes</a>
+      <a href="#dress">Dress code</a>
+    </div>
+  </nav>
+
+  <section class="section cover" id="cover">
+    <div class="cover-collage-613" aria-label="Титульный коллаж свадебного приглашения">
+      <img src="assets/image_05.jpg" alt="Никита и Александра">
+      <img src="assets/image_06.jpg" alt="Графическая карточка">
+      <img src="assets/image_07.jpg" alt="Интерьер AG Loft Vinyl">
+      <img src="assets/image_08.jpg" alt="Деталь интерьера">
+      <img src="assets/image_09.jpg" alt="Дата свадьбы">
+      <img src="assets/image_10.jpg" alt="Кольцо и руки">
+      <img src="assets/image_11.jpg" alt="Love">
+      <img src="assets/image_12.jpg" alt="Никита и Александра на переходе">
+      <img src="assets/image_13.jpg" alt="Графическая карточка">
+    </div>
+  </section>
+
+  <section class="section" id="intro">
+    <div class="split">
+      <div>
+        <p class="date-big">27<br>08</p>
+      </div>
+
+      <div class="intro-text-box intro-text-clean">
+        <p class="kicker intro-kicker">Приглашение</p>
+        <p class="text intro-main-text">
+          Мы верим, что счастье становится полным, когда им делятся с самыми близкими.
+          Один день в этом году будет для нас особенным.
+          Будем счастливы видеть вас на нашем празднике.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="timing">
+    <div class="split reverse">
+      <div>
+        <p class="kicker kicker-black">Программа вечера</p>
+        <h2 class="title title-terracotta">Timing</h2>
+
+        <div class="timeline">
+          <div class="timeline-row">
+            <div class="time">15:30</div>
+            <div class="event">
+              <span class="event-main">Регистрация</span>
+              <span class="event-detail">Таганская 44 — камерная церемония в кругу семьи</span>
+            </div>
+          </div>
+          <div class="timeline-row"><div class="time">16:30</div><div class="event"><span class="event-main">Welcome</span></div></div>
+          <div class="timeline-row"><div class="time">17:00</div><div class="event"><span class="event-main">Встреча молодоженов</span></div></div>
+          <div class="timeline-row"><div class="time">17:30</div><div class="event"><span class="event-main">Ужин</span></div></div>
+          <div class="timeline-row"><div class="time">22:00</div><div class="event"><span class="event-main">Вечерняя часть</span></div></div>
+        </div>
+      </div>
+
+      <div class="photo timing-photo" aria-label="Интерьер площадки"></div>
+    </div>
+  </section>
+
+  <section class="section" id="location">
+    <div class="split">
+      <div class="photo location-photo" aria-label="Вход на площадку"></div>
+
+      <div>
+        <p class="kicker">Локация</p>
+        <h2 class="title location-title-balanced">AG Loft<br><span class="script">Vinyl</span></h2>
+        <p class="address">Варшавское шоссе, 33с3<br>Москва</p>
+        <a class="button" href="https://yandex.ru/maps/-/CPTfQIze" target="_blank" rel="noopener">Открыть карту</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="notes">
+    <div class="notes-layout-611">
+      <div class="notes-text-611">
+        <p class="kicker kicker-black">Пожелания</p>
+        <h2 class="title title-terracotta">Notes</h2>
+
+        <div class="notes-list-611">
+          <article class="note-line-611">
+            <div class="note-line-number-611">01</div>
+            <div>
+              <h3>Gift</h3>
+              <p class="text small">Мы будем рады подарку в конверте — пусть он станет вкладом в наши общие мечты, планы и будущие приключения.</p>
+            </div>
+          </article>
+
+          <article class="note-line-611">
+            <div class="note-line-number-611">02</div>
+            <div>
+              <h3>Wine</h3>
+              <p class="text small">Вместо цветов можно принести бутылку вина — так у нас останется повод вспомнить этот вечер ещё раз.</p>
+            </div>
+          </article>
+
+          <article class="note-line-611">
+            <div class="note-line-number-611">03</div>
+            <div>
+              <h3>Mood</h3>
+              <p class="text small">Формат — камерный совместный вечер: самые близкие рядом, ужин, живое общение, лёгкое настроение, трогательные моменты, музыка, танцы.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="notes-image-611" aria-label="Детали сервировки"></div>
+    </div>
+  </section>
+
+  <section class="section" id="dress">
+    <div class="split">
+      <div class="photo dress-photo" aria-label="Интерьер площадки"></div>
+
+      <div>
+        <h2 class="title title-terracotta dress-title">Dress<br>Code</h2>
+
+        <p class="text">
+          Будем рады, если вы поддержите общую эстетику вечера: лаконичные, современные и выразительные образы.
+          Подойдут костюмы, платья, интересные силуэты, акцентные детали и оттенки из палитры ниже.
+        </p>
+
+        <div class="palette" aria-label="Палитра дресс-кода">
+          <div class="swatch ivory"><span>ivory</span></div>
+          <div class="swatch sage"><span>sage</span></div>
+          <div class="swatch olive"><span>olive</span></div>
+          <div class="swatch deep-olive"><span>deep olive</span></div>
+          <div class="swatch dusty-denim"><span>dusty denim</span></div>
+          <div class="swatch blue"><span>dusty blue</span></div>
+          <div class="swatch smoky-mauve"><span>smoky mauve</span></div>
+          <div class="swatch warm-taupe"><span>warm taupe</span></div>
+          <div class="swatch chocolate"><span>chocolate</span></div>
+          <div class="swatch plum"><span>plum</span></div>
+          <div class="swatch graphite"><span>graphite</span></div>
+          <div class="swatch soft-peach"><span>soft peach</span></div>
+        </div>
+
+        <p class="upper" style="margin-top:18px;">
+          Просим по возможности избегать ярко-красных, оранжевых и терракотовых total look,
+          чтобы не сливаться с интерьером площадки.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section final">
+    <div>
+      <h2 class="final-title">See<br><em>you</em><br>there</h2>
+      <div class="final-line">
+        <p class="meta">Никита & Александра · 27.08.2026 · AG Loft / Vinyl</p>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>
